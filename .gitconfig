@@ -1,11 +1,5 @@
-[user]
-	name = Abdullah Bakhach
-	email = abdullah.bakhach@gmail.com
 [merge]
 	tool = diffmerge
-[github]
-	user = abbood
-	token = dda95951d54fc3ad08f5a20bbcec8771
 
 [alias]
     st = status
@@ -48,7 +42,7 @@
 	whitespace = nowarn
 [core]
 	ignorecase = false
-	excludesfile = /Users/abdullahbakhach/.gitignore_global
+	excludesfile = ~/.gitignore_global
 [difftool "sourcetree"]
 	cmd = diffmerge \"$LOCAL\" \"$REMOTE\"
 	path = 
