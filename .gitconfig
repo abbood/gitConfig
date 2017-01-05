@@ -1,6 +1,3 @@
-[merge]
-	tool = diffmerge
-
 [alias]
     st = status
     ci = commit
@@ -36,23 +33,3 @@
     added = yellow
     changed = green
     untracked = cyan
-    
-[apply]
-  ignorewhitespace = change
-	whitespace = nowarn
-[core]
-	ignorecase = false
-	excludesfile = ~/.gitignore_global
-[difftool "sourcetree"]
-	cmd = diffmerge \"$LOCAL\" \"$REMOTE\"
-	path = 
-[mergetool "sourcetree"]
-	cmd = /Applications/SourceTree.app/Contents/Resources/diffmerge-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
-	trustExitCode = true
-[diff]
-	tool = diffmerge
-[difftool "diffmerge"]
-	cmd = diffmerge \"$LOCAL\" \"$REMOTE\"
-[mergetool "diffmerge"]
-	cmd = "diffmerge --merge --result=\"$MERGED\" \"$LOCAL\" \"$(if test -f \"$BASE\"; then echo \"$BASE\"; else echo \"$LOCAL\"; fi)\" \"$REMOTE\""
-	trustExitCode = true
