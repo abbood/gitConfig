@@ -1,19 +1,28 @@
 [alias]
     st = status
+    ds = describe
     ci = commit
+    cp = cherry-pick
     br = branch
     co = checkout
+    cod = checkout develop
     df = diff
     dc = diff --cached
     lg = log -p
     l = log --graph --decorate --pretty=oneline --abbrev-commit
     ll = log --pretty=format:'%h : %s' --graph --decorate
     la = log --graph --decorate --pretty=oneline --abbrev-commit --all
+    diffn = diff head^ --name-only
     ls = ls-files
     rb = rebase
     com = checkout master
     rem = rebase master
     now = diff HEAD
+    dr = push -d origin
+    ct = branch --contains
+    dd = push origin --delete
+    find-merge = "!sh -c 'commit=$0 && branch=${1:-HEAD} && (git rev-list $commit..$branch --ancestry-path | cat -n; git rev-list $commit..$branch --first-parent | cat -n) | sort -k2 -s | uniq -f1 -d | sort -n | tail -1 | cut -f2'"
+    show-merge = "!sh -c 'merge=$(git find-merge $0 $1) && [ -n \"$merge\" ] && git show $merge'"
     stache = stash
 	ss = stash
 	cl = "!f() { git clone git@wdca.unfuddle.com:wdca/$1.git; }; f"
@@ -33,3 +42,4 @@
     added = yellow
     changed = green
     untracked = cyan
+
